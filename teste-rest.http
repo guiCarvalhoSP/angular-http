@@ -1,0 +1,24 @@
+###Get da API
+http://localhost:3000/cursos
+
+### GET id especifico
+GET http://localhost:3000/cursos/1
+
+###Metodo Post
+POST http://localhost:3000/cursos HTTP/1.1
+content-type: application/json
+
+{
+    "nome": "Javascript"
+}
+
+### Método PUT
+PUT http://localhost:3000/cursos/2 HTTP/1.1
+content-type: application/json
+
+{
+    "nome": "Java"
+}
+
+### Método DELETE
+DELETE http://localhost:3000/cursos/2
