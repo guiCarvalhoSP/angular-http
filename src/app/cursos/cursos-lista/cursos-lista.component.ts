@@ -39,8 +39,6 @@ export class CursosListaComponent implements OnInit {
 
   handleError(){
     this.alertService.showAlertDanger("Erro ao carregar, entre em contato com o suporte");
-
   }
-
 
 }
