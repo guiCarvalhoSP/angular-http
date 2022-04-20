@@ -6,6 +6,7 @@ import { CursosService } from '../cursos.service';
 import { AlertModalComponent } from 'src/app/shared/alert-modal/alert-modal.component';
 
 import { ICurso } from '../icurso';
+import { AlertModalService } from 'src/app/shared/alert-modal.service';
 
 @Component({
   selector: 'app-cursos-lista',
@@ -21,7 +22,8 @@ export class CursosListaComponent implements OnInit {
   bsModalRef: BsModalRef;
 
 
-  constructor(private service: CursosService, private modalService: BsModalService) { }
+  constructor(private service: CursosService, 
+    private alertService: AlertModalService) { }
 
   ngOnInit(): void {
     this.cursos$ = this.service.list()
@@ -36,9 +38,7 @@ export class CursosListaComponent implements OnInit {
   }
 
   handleError(){
-    this.bsModalRef = this.modalService.show(AlertModalComponent)
-    this.bsModalRef.content.type = 'danger'
-    this.bsModalRef.content.message = 'Erro ao carregar. Entre em contato com o suporte.'
+    this.alertService.showAlertDanger("Erro ao carregar, entre em contato com o suporte");
 
   }
 
