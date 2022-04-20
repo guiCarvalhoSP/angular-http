@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { delay } from 'rxjs/operators'
+import { delay, take } from 'rxjs/operators'
 import { ICurso } from './icurso';
 import { environment } from '../../environments/environment';
 
@@ -17,5 +17,9 @@ export class CursosService {
     .pipe(
       delay(2000)
     );
+  }
+
+  create(curso){
+    return this.http.post(this.API, curso).pipe(take(1));
   }
 }

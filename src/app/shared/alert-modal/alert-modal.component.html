@@ -1,5 +1,7 @@
-<div class="alert alert-{{ type }} alert-disissible mb-0" role="alert">
-    {{ message }}
+<div class="alert alert-{{ type }} alert-dismissible mb-0" role="alert">
+    <div>
+        {{ message }}
+    </div>
     <button type="button" class="btn-close" data-dimiss="alert" aria-label="Close" (click)="onClose()">
     </button>
 </div>

@@ -7,6 +7,10 @@
     {
       "nome": "Javascript",
       "id": 2
+    },
+    {
+      "nome": "Python",
+      "id": 3
     }
   ]
 }
